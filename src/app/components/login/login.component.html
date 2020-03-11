@@ -1,1 +1,53 @@
-<p>login works!</p>
+<div class="loginSection">
+
+  <div class="row">
+
+    <div class="col leftSide">
+      <h1>Hello</h1>
+    </div>
+
+
+    <div class="col col-md-4">
+      <div class="login">
+        <h4 class="text-center">Login To Vote</h4>
+        <hr>
+
+        <app-messages></app-messages>
+
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+          <div class="row">
+            <mat-form-field appearance="outline">
+              <mat-label>Enter Username</mat-label>
+              <input matInput type="text" id="username" formControlName="username" required>
+              <mat-error *ngIf="!loginForm.controls['username'].valid && loginForm.controls['username'].touched">
+                username is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <mat-form-field appearance="outline">
+              <mat-label>Enter Reference #</mat-label>
+              <input matInput type="password" id="reference" formControlName="reference" required>
+              <mat-error *ngIf="loginForm.controls['reference'].touched">
+                reference number is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="row d-flex justify-content-end forgot">
+            <a href="">Forgot Details</a>
+          </div>
+
+          <button mat-mat-raised-button class="btn btn-block" [disabled]="loginForm.invalid" [disabled]="btnDisabled">Login</button>
+
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>

@@ -14,12 +14,17 @@ import { RestApiService } from './services/rest-api.service';
 import { AuthGuardService } from './services/auth-guard.service';
 
 import { LoginComponent } from './components/login/login.component';
+import { MessagesComponent } from './messages/messages.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    MessagesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,9 @@ import { LoginComponent } from './components/login/login.component';
     NgbModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthGuardService, DataService, RestApiService],
   bootstrap: [AppComponent]
